@@ -46,8 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eee00981629f5197d587890101f64da105492aaa
      <Compile Include="Assets\GameController.cs" />
      <Compile Include="Assets\PlayerController.cs" />
+=======
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+>>>>>>> e11be1fcd90232212cea08e2c480e45b317676ce
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
