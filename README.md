@@ -6,3 +6,6 @@ Version 1.1
 - Made simple UI
 - Now we have 2 phase, first for prepare and second for play 
 - Changed the Animator to makes it smoother
+
+Edited 21/05/2017 03:22 AM
+- Fixed running animation
