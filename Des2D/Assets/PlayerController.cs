@@ -4,41 +4,45 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	/*WARNING: when you change value variable in code, It won't change in the game that's why you need to change directly
-	in components ! PugPug*/
+	in components ! PugPug*/ /*cam mom*/
 	private Rigidbody2D r2;
 	private Animator anim;
-	public float speedForce = 250f;
-	//----var fly------------
-	private bool isFly = false;
-	public float upForce = 275f;
-	private float timeFly = 1.3f, timeCnt = 0;//we must wait 1.3s for the next flight
+
+	public float speed = 1f;
+	public float jumpPower = 150f;
+
+	//Ground checking
+	public Transform groundCheckTrans;
+	public float groundCheckRadius = 1f;
+	public LayerMask groundPlayer;
+	private bool grounded;
+
 	// Use this for initialization
 	void Start () {
 		r2 = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 	}
-	
+		
 	// Update is called once per frame
-	void Update () {
-		if (GameController.game.isStart) {
-			GameController.game.ClearStartText();//this function will clear the text in the middle of screen
-			anim.SetTrigger ("Run");
-			r2.AddForce (new Vector2 (speedForce, 0));//uses addforce to make velocity :v
-			//--------Check condition to fly-------------
-			if (!isFly) {
-				if (Input.GetKeyDown (KeyCode.Space)) {
-					r2.AddForce (new Vector2 (0, upForce));
-					isFly = true;
-				}
+	void FixedUpdate () {
 
-			} else {
-				timeCnt += Time.deltaTime;
-				if (timeCnt >= timeFly) {
-					isFly = false;
-					timeCnt = 0;
-				}
+		grounded = Physics2D.OverlapCircle (groundCheckTrans.position, groundCheckRadius, groundPlayer );
+
+		if (GameController.game.started) {
+			anim.SetTrigger ("Run");
+			if (grounded) {
+				Debug.Log ("Grounded");
 			}
-			//------------------------------------------
+			else
+				Debug.Log ("Grounded false");
+			if (Input.GetKeyDown (KeyCode.Space) && grounded) {
+				
+				r2.AddForce (new Vector2(0, jumpPower));
+			}
+			//r2.AddForce (new Vector2(speed, curJumpP));
+			r2.velocity = new Vector2(speed * Time.deltaTime, r2.velocity.y);
+
+
 		}
 	}
 

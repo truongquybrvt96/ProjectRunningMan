@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GameController : MonoBehaviour {
 	public static GameController game;
-	public GameObject startText,pauseText;
-	public bool isStart=false;
+	public GameObject startText, pauseText;
+	public bool started = false;
 	private bool isPause = false;
 	// Use this for initialization
 	void Awake()
@@ -15,17 +15,14 @@ public class GameController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-
-	public void ClearStartText()
-	{
-		startText.SetActive (false);
-	}
+		
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			isStart = true;
+			startText.SetActive (false);
+			started = true;
 		}
-		if (Input.GetKeyDown (KeyCode.Escape) && isStart) {
+		if (Input.GetKeyDown (KeyCode.Escape) && started) {
 			isPause = !isPause;
 		}	
 		if (isPause) {
