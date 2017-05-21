@@ -13,3 +13,8 @@ Edited 21/05/2017 03:22 AM
 Edited 21/05/2017 15:16 PM
 - Endless Background
 - Can pause game (press Escape to pause)
+
+Edited 21/05/2017 21:55 PM
+- Random timing object spawner
+- Self object destroyer
+- Added in-air animation
