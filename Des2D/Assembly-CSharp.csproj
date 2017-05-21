@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GameController.cs" />
+     <Compile Include="Assets\ObjectDestroyer.cs" />
+     <Compile Include="Assets\ObjectGenerator.cs" />
      <Compile Include="Assets\PlayerController.cs" />
      <Compile Include="Assets\RepeatBackground.cs" />
  <Reference Include="UnityEngine.UI">

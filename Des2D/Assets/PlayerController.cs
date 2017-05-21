@@ -23,22 +23,22 @@ public class PlayerController : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 	}
 		
-	// Update is called once per frame
+	void Update()
+	{
+		if (GameController.game.started) {
+			if (Input.GetKeyDown (KeyCode.Space) && grounded) {
+				r2.AddForce (new Vector2 (0, jumpPower));
+			}
+		}
+	}
+
 	void FixedUpdate () {
 
 		grounded = Physics2D.OverlapCircle (groundCheckTrans.position, groundCheckRadius, groundPlayer );
-
+		anim.SetBool ("Grounded", grounded);
 		if (GameController.game.started) {
 			anim.SetTrigger ("Run");
-			if (grounded) {
-				Debug.Log ("Grounded");
-			}
-			else
-				Debug.Log ("Grounded false");
-			if (Input.GetKeyDown (KeyCode.Space) && grounded) {
-				
-				r2.AddForce (new Vector2(0, jumpPower));
-			}
+
 			//r2.AddForce (new Vector2(speed, curJumpP));
 			r2.velocity = new Vector2(speed * Time.deltaTime, r2.velocity.y);
 
