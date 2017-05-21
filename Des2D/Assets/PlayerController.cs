@@ -6,13 +6,13 @@ public class PlayerController : MonoBehaviour {
 	/*WARNING: when you change value variable in code, It won't change in the game that's why you need to change directly
 	in components ! PugPug*/
 	private Rigidbody2D r2;
-	bool isStart=false;
+	bool isStart = false;
 	private Animator anim;
-	public float speedForce=250f;
+	public float speedForce = 250f;
 	//----var fly------------
-	private bool isFly=false;
-	public float upForce=275f;
-	private float timeFly=1f,timeCnt=0;//we must wait 1s for the next flight
+	private bool isFly = false;
+	public float upForce = 275f;
+	private float timeFly = 1f, timeCnt = 0;//we must wait 1s for the next flight
 	// Use this for initialization
 	void Start () {
 		r2 = GetComponent<Rigidbody2D> ();
