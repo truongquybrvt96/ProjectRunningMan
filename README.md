@@ -9,3 +9,6 @@ Version 1.1
 
 Edited 21/05/2017 03:22 AM
 - Fixed running animation
+Edited 21/05/2017 15:16 PM
+- Endless Background
+- Can pause game (press Escape to pause)
