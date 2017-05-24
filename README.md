@@ -18,3 +18,7 @@ Edited 21/05/2017 21:55 PM
 - Random timing object spawner
 - Self object destroyer
 - Added in-air animation
+
+Edited 25/05/2017 00:37 AM
+- New character with animations
+- BUG: Can't jump
